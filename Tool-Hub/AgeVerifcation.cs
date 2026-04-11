@@ -70,6 +70,7 @@ namespace mainProgram
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Sorry, you must be 18+ to sign up.");
+                            Console.ReadKey();
                             Console.ResetColor();
                             IsValidInput = true;
                         }
