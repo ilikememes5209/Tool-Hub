@@ -26,7 +26,7 @@ namespace mainProgram
 
                 while (!IsValidInput)
                 {
-                    Console.Write("Please select an option (1-5): ");
+                    Console.Write("Please select an option (1-6):");
                     string input = Console.ReadLine();
 
                     switch (input)

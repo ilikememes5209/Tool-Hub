@@ -1,0 +1,6 @@
+Tool Hub is my first C# project, and it serves as a collection of various tools that i have created, each of them serving different purposes to help me understand and learn C# better.
+To run Tool Hub, you can: download the latest release from the releases section, and run the executable file. Alternatively, you can clone the repository and build the project using Visual Studio or any other C# IDE, but make sure you have an openweathermap account and replace the empty api key in with your own to allow the weather tool to work.
+When you run the application, you will be presented with a menu that allows you to select which tool you want to use. Each tool has its own functionality and can be accessed by selecting the options from the menu, and the navigation is used with the number keys.
+To contribute to the project, you can fork the repository and create a pull request with your changes. I welcome any contributions, whether it's adding new tools, improving existing ones, or fixing bugs. Please make sure to follow the coding style and guidelines of the project when submitting your contributions.
+
+Created by Colton Blake, 2026
