@@ -26,7 +26,7 @@ namespace mainProgram
 
                 while (!IsValidInput)
                 {
-                    Console.Write("Please select an option (1-6):");
+                    Console.Write("Please select an option (1-5):");
                     string input = Console.ReadLine();
 
                     switch (input)
@@ -54,17 +54,13 @@ namespace mainProgram
                             settingsMenu.OpenSettings();
                             break;
                             
+
+
                         case "5":
-                            User.CurrentUser = null;
-                            Visuals.SimulateLoading("Logging out...");
-                            System.Threading.Thread.Sleep(1000);
-                            return;
-
-
-                        case "6":
-                            Console.WriteLine("Exiting program...");
+                            Console.WriteLine("Signing out...");
                             IsValidInput = true;
                             running = false;
+                            Environment.Exit(0);
                             break;
 
                         default:

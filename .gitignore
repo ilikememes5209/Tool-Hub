@@ -363,3 +363,10 @@ MigrationBackup/
 FodyWeavers.xsd
 
 .env
+
+# DO NOT ignore the template or the manual
+!env.example.txt
+!README.md
+
+# Ignore the local user database so your personal login isn't public
+users.json

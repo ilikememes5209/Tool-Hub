@@ -12,10 +12,11 @@
     <PackageReference Include="DotNetEnv" Version="3.1.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update=".env">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+ <ItemGroup>
+  <None Update=".env;env.example.txt;README.md">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+  </None>
+</ItemGroup>
 
 </Project>
