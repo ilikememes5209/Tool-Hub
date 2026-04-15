@@ -14,7 +14,7 @@ namespace mainProgram
                 Visuals.DisplayLogo();
 
                 Console.WriteLine("--- Tool Hub Main Menu ---");
-                string[] menuOptions = { "Calculator", "Unit Converter", "Weather", "Settings","Sign Out", "Exit" };
+                string[] menuOptions = { "Calculator", "Unit Converter", "Weather", "Settings","Sign Out"};
 
                 for (int i = 0; i < menuOptions.Length; i++)
                 {

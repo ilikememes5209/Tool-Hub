@@ -4,6 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace mainProgram
 {
@@ -19,7 +20,8 @@ namespace mainProgram
                 Console.WriteLine("1. View User Profile");
                 Console.WriteLine("2. Change Theme Color");
                 Console.WriteLine("3. Change Password");
-                Console.WriteLine("4. Back to Main Menu");
+                Console.WriteLine("4. Disable/Enable Animation");
+                Console.WriteLine("5. Back to Main Menu");
                 Console.Write("\nSelection: ");
 
                 switch (Console.ReadLine())
@@ -27,7 +29,8 @@ namespace mainProgram
                     case "1": ShowProfile(); break;
                     case "2": ChangeColor(); break;
                     case "3": ChangePassword(); break;
-                    case "4": backToMenu = true; break;
+                    case "4": DisableLoadingAnimation(); break;
+                    case "5": backToMenu = true; break;
                 }
             }
         }
@@ -79,6 +82,7 @@ namespace mainProgram
                 if (user != null)
                 {
                     user.FavoriteColor = User.CurrentUser.FavoriteColor;
+                    user.ShowAnimations = User.CurrentUser.ShowAnimations;
                     File.WriteAllText(fileName, JsonSerializer.Serialize(users, new JsonSerializerOptions { WriteIndented = true }));
                 }
             }
@@ -131,6 +135,19 @@ namespace mainProgram
             }
 
             Console.WriteLine("Press any key to return...");
+            Console.ReadKey();
+        }
+        private static void DisableLoadingAnimation()
+        {
+            Console.Clear();
+            User.CurrentUser.ShowAnimations = !User.CurrentUser.ShowAnimations;
+
+            string status = User.CurrentUser.ShowAnimations ? "Enabled" : "Disabled";
+            Console.WriteLine($"Loading animations are now {status}.");
+
+            SaveSettings();
+
+            Console.WriteLine("\nPress any key to return...");
             Console.ReadKey();
         }
     }

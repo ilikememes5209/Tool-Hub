@@ -6,9 +6,38 @@ namespace mainProgram
     {
         public static void Calculator()
         {
+            bool backToMenu = false;
+
+            while (!backToMenu)
+            {
+                Console.Clear();
+                Console.WriteLine("\n--- Calculator ---");
+                Console.WriteLine("1. Perform a Calculation");
+                Console.WriteLine("2. Back to Main Menu");
+                Console.Write("\nSelect an option: ");
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        RunCalculation();
+                        break;
+                    case "2":
+                        backToMenu = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Press any key to try again.");
+                        Console.ReadKey();
+                        break;
+                }
+            }
+        }
+
+        private static void RunCalculation()
+        {
             Console.Clear();
-            Console.WriteLine("\n--- Calculator ---");
-            Console.WriteLine("Welcome! Please enter your calculation below.");
+            Console.WriteLine("\n--- New Calculation ---");
 
             double num1 = GetValidNumber("Enter first number: ");
 
@@ -59,9 +88,10 @@ namespace mainProgram
                 Console.ResetColor();
             }
 
-            Console.WriteLine("\nPress any key to return to the menu...");
+            Console.WriteLine("\nPress any key to return to calculator menu...");
             Console.ReadKey();
         }
+
         private static double GetValidNumber(string prompt)
         {
             double number;

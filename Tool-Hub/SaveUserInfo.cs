@@ -13,5 +13,7 @@ namespace mainProgram
         public int Age { get; set; }
         public static User CurrentUser { get; set; }
         public ConsoleColor FavoriteColor { get; set; } = ConsoleColor.White;
+
+        public bool ShowAnimations { get; set; } = true;
     }
 }
